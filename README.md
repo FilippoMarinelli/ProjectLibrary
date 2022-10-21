@@ -1,3 +1,3 @@
 # ProjectLibrary
 
-library where you can add books with their total pages and where you left off, with simple layout focusing on training the backend
+library where you create your personal account and can add your books with their total pages and where you left off, showing the percentage of how much you have read
