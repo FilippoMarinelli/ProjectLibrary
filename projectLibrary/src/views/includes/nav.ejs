@@ -1,0 +1,32 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="http://localhost:3000/">Home</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto">
+
+        <% if(user){ %>
+          <li class="nav-item">
+            <a class="nav-link" >Bem vindo <%= user.name %></a>
+          </li> 
+        <% } %>
+        <li class="nav-item">
+          <a class="nav-link" href="http://localhost:3000/livros/colecao">Minha coleção</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="http://localhost:3000/livros">Adicionar Livro</a>
+        </li>
+        <% if(user) { %>
+        <li class="nav-item">
+          <a class="nav-link" href="http://localhost:3000/login/logout">Sair</a>
+        </li>
+        <% } else { %>
+        <li class="nav-item">
+          <a class="nav-link" href="http://localhost:3000/login">Sign in</a>
+        </li>
+        <% } %>
+      </ul>
+    </div>
+  </nav>

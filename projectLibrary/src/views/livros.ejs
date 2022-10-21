@@ -1,0 +1,51 @@
+<%- include('includes/head') %>
+<%- include('includes/nav') %>
+
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-2"></div>
+        <div class="col-lg-8 my-3">
+          <h1 class="text-center">Adicione seu livro</h1>
+
+          <%- include('includes/messages'); %>
+          
+            <div class="row">
+
+              <div class="col-lg my-5">
+                <h4>Informações necessarias</h4>
+                <p>Para cadastrar seu livro na coleção preencha os dados abaixo</p>
+                <form class="form-livro" action="/livros/addlivro" method="POST">
+                  <input type="hidden" name="_csrf" value=<%=csrfToken %>>
+                  <div class="mb-3">
+                    <label for="exampleInputTitle" class="form-label">titulo</label>
+                    <input type="text" class="form-control" name="titulo">
+                  </div>
+                  <div class="mb-3">
+                    <label for="exampleInputCapAtu" class="form-label">Capitulo atual</label>
+                    <input type="number" class="form-control" name="capituloatu" aria-describedby="emailHelp">
+                  </div>
+                  <div class="mb-3">
+                    <label for="exampleInputCapTot" class="form-label">Capitulos totais</label>
+                    <input type="number" class="form-control" name='capitulostot'>
+                  </div>
+                  <div class="mb-3">
+                    <label for="exampleInputCategory" class="form-label">Categoria</label>
+                    <select name="categoria" class="form-control" id="floatingSelect">
+                      <option value="ação">ação</option>
+                      <option value="romance">romance</option>
+                      <option value="terror">terror</option>
+                      <option value="aventura">aventura</option>
+                    </select>
+                  </div>
+                  <button type="submit" class="btn btn-primary">Criar</button>
+                </form>
+              </div>
+
+            </div>
+        </div>
+
+        <div class="col-lg-2"></div>
+      </div>
+    </div>
+
+<%- include('includes/footer') %>
